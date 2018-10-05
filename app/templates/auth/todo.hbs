@@ -1,0 +1,15 @@
+<div class="row">
+	<form {{action 'addTask' taskInput on='submit'}}>
+		<div class="input-field col s10">
+			{{input type="text" value=taskInput class="task-input" placeHolder='Add a task'}}
+		</div>
+		<div class="input-field col s2">
+			<a class="waves-effect waves-light btn" {{action 'addTask' taskInput on='click'}} >Add todo</a>
+		</div>
+	</form>
+</div>
+{{#each tasks as |task|}}
+	<div class="cent">
+		{{main-container task=task onTaskDelete=(action 'onTaskDelete') onCompletedTask=(action 'onCompletedTask')}}
+	</div>
+{{/each}}

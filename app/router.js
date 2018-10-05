@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('auth',{path: '/'}, function() {
+    this.route('todo',{path: '/'});
+    this.route('rails-todo');
+  });
 });
 
 export default Router;

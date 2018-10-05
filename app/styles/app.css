@@ -1,0 +1,89 @@
+nav{
+	background-color: #70cf97;
+}
+input[type=text]:not(.browser-default){
+	padding-left: 5px;
+	border: 1px solid #ababab;
+	border-radius: 5px;
+	height: 2.5rem;
+	width: 95%;
+}
+html{
+	line-height: 1;
+}
+.material-icons{
+	padding-left: 5px;
+}
+.btn{
+	background-color: #2c9cdb;
+	border-radius: 5px;
+}
+.row{
+	margin-bottom: 0;
+}
+.row .col{
+	padding: 0px;
+}
+.cent{
+	vertical-align: middle;
+}
+.container1{
+	vertical-align: middle;
+	display: flex;
+	width: 100%;
+	border-radius: 10px;
+	/* background-color: #FFCC76; */
+	-webkit-box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
+	-moz-box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
+	box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
+}
+.checked-task{
+ vertical-align: middle;
+}
+.name-task{
+ width: 45%;
+ padding-left: 5px;
+ /* font-weight: bold; */
+
+}
+.created-task{
+ color: gray;
+ width: 45%;
+}
+.delete-task{
+ width: 5%;
+
+}
+.todo{
+	background-color: white;
+}
+.title{
+	font-weight: bold;
+}
+.checkbox{
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #2c9cdb !important;
+	text-align: center;
+}
+.checkbox1{
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #fff !important;
+	border:1px solid #818181;
+}
+.icon-done{
+	padding-left: 0px;
+	color:white ;
+}
+.icon-delete{
+	padding-left: 0px;
+	cursor: pointer;
+}
+.button-delete{
+	background-color: white;
+	border: 0;
+	padding: 0;
+}

@@ -1,0 +1,9 @@
+{{#if task.checked}}
+	<div class="checkbox waves-effect waves-light" {{action 'completedTask' task on='click' value=task}}>
+		<i class="material-icons icon-done">done</i>
+	</div>
+{{else}}
+	<div class="checkbox1 waves-effect waves-light" {{action 'completedTask' task on='click' value=task}}>
+		<i class="material-icons icon-done">done</i>
+	</div>
+{{/if}}
