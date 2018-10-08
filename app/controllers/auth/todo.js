@@ -40,7 +40,7 @@ export default Controller.extend({
 			}
 		},
 		onCompletedTask(task){
-				set(task, 'checked', !task.checked)
+				set(task, 'checked', !task.checked);
 				if (!task.checked) set(task, 'completed', '')
 				else set(task, 'completed', Date())
 		}

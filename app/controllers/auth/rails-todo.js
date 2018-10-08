@@ -1,4 +1,6 @@
 import Controller from '@ember/controller';
+import { set } from '@ember/object';
+import moment from 'moment';
 
 export default Controller.extend({
 	actions: {
@@ -6,27 +8,33 @@ export default Controller.extend({
 			let ans = confirm("Are you sure?");
 			if (ans){
 				this.store.findRecord('job', task.id, { backgroundReload: false }).then(function(task) {
-  				task.destroyRecord(); // => DELETE to /posts/2
+  				task.destroyRecord(); 
 				});
 			}
 		},
 		addTask(taskInput){
 			let taskName = taskInput;
-			let checked = false;
-			let created = Date();
-			let completed = '';
 			if (taskInput){
-				let newTask = this.store.createRecord('job',{checked: false, name: taskName, created: Date(), completed: ''});
+				let newTask = this.store.createRecord('job', {
+					checked: false, 
+					name: taskName,
+					created: Date(), 
+					completed: ''
+				});
 				newTask.save();
 				this.set('taskInput','')
 			} else{
 				alert('Type a task');
 			}
 		},
-		onCompletedTask(task){
-				set(task, 'checked', !task.checked)
-				if (!task.checked) set(task, 'completedAt', '')
-				else set(task, 'completedAt', Date())
+			onCompletedTask(task){
+			task.set('checked', !task.checked) 
+			if (!task.checked){
+				task.set('completed', '')
+			} else {
+				task.set('completed', moment().format('YYYY-MM-DDTH:M:SS.MSZ'));
+			}
+			task.save();
 		}
 	}
 });
