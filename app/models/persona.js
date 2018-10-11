@@ -5,7 +5,7 @@ export default DS.Model.extend({
 	apellidoPaterno: 	DS.attr('string'),
 	apellidoMaterno: 	DS.attr('string'),
 	curp: 				DS.attr('string'),
-	alumno_id: 			DS.belongsTo('alumno'),
+	alumno: 			DS.belongsTo('alumno'),
 	fullName: computed('nombre', 'apellidoPaterno', 'apellidoMaterno', function(){
 		let nombre = this.get('nombre');
 		let apellidoPaterno = this.get('apellidoPaterno');

@@ -53,8 +53,8 @@
       	<p class="created-task">{{model.alumno.matricula}}</p>	
     </div>
     <div class="alumno-asignaturas">
-      {{#each model.asignaturas as |asignatura|}}
-        <p>{{asignatura.persona.nombre}} </p>
+      {{#each model.alum_asi as |asignatura|}}
+        <p>{{asignatura.asignatura.nombre}} </p>
       {{/each}}
     </div>
   </div>
