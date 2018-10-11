@@ -1,10 +1,14 @@
+<h4>Todos</h4>
 <div class="row">
 	<form {{action 'addTask' taskInput on='submit'}}>
 		<div class="input-field col s10">
-			{{input type="text" value=taskInput class="task-input" placeHolder='Add a task'}}
+			{{input
+				type="text"
+				value=taskInput
+				class="task-input"}}
 		</div>
 		<div class="input-field col s2">
-			<a class="waves-effect waves-light btn" {{action 'addTask' taskInput on='click'}} >Add todo</a>
+			<button type="submit" class="waves-effect waves-light btn {{if taskInput '' 'disabled'}}">Add todo</button>
 		</div>
 	</form>
 </div>

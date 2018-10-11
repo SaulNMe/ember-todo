@@ -5,35 +5,21 @@ import moment from 'moment';
 export default Controller.extend({
 	actions: {
 		onTaskDelete(task){
-			let ans = confirm("Are you sure?");
-			if (ans){
-				this.store.findRecord('job', task.id, { backgroundReload: false }).then(function(task) {
-  				task.destroyRecord(); 
-				});
-			}
-		},
+			if (confirm("Are you sure?")) task.destroyRecord()
+			},
 		addTask(taskInput){
-			let taskName = taskInput;
-			if (taskInput){
-				let newTask = this.store.createRecord('job', {
-					checked: false, 
-					name: taskName,
-					created: Date(), 
-					completed: ''
-				});
-				newTask.save();
-				this.set('taskInput','')
-			} else{
-				alert('Type a task');
-			}
+			let newTask = this.store.createRecord('job', {
+				checked: false, 
+				name: taskInput,
+				created: Date(),
+				completed: null
+			}).save().then(() =>
+				this.set('taskInput', '')
+			);
 		},
 			onCompletedTask(task){
 			task.set('checked', !task.checked) 
-			if (!task.checked){
-				task.set('completed', '')
-			} else {
-				task.set('completed', moment().format('YYYY-MM-DDTH:M:SS.MSZ'));
-			}
+			task.set('completed', task.checked ? moment() : '')
 			task.save();
 		}
 	}

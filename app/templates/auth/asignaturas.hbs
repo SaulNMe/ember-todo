@@ -1,0 +1,34 @@
+<h4>Asignaturas</h4>
+<div class="modal-container">
+	{{#jquery-wrapper 
+		query='.modal'
+		method='modal'
+		onInsertAsignatura= (action 'addAsignatura')
+		}}
+
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn modal-trigger right" href="#modal1">Add Asignatura</a>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal">
+		    <div class="modal-content">
+		      	<h5>Crear nueva asignatura</h5>
+		      	<p>Nombre</p>
+		      	<p>{{input type='text' value=nombre}}</p>
+		      	<p>Creditos</p>
+		      	<p>{{input type='number' value=creditos}}</p>
+		      	
+		    </div>
+		    <div class="modal-footer">
+		    	<a href="#" class="modal-close waves-effect waver-green btn-flat modal-button"> Cancelar</a>
+		      	<a href="#" class="modal-close waves-effect waves-blue btn-flat only-blue modal-button {{if nombre (if creditos '' 'disabled') 'disabled'}}" {{action 'addAsignatura' nombre creditos on='click'}}>Guardar</a>
+		    </div>
+	  	</div>
+	{{/jquery-wrapper}}
+</div>
+
+{{#each model as |asignatura|}}
+	<div class="cent">
+		{{asignaturas-container asignatura=asignatura onAsignaturaDelete=(action 'onAsignaturaDelete')}}
+	</div>
+{{/each}}

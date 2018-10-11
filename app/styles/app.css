@@ -1,7 +1,11 @@
+*{
+	font-family: 'Roboto', sans-serif;
+}
 nav{
 	background-color: #70cf97;
 }
-input[type=text]:not(.browser-default){
+input[type=text]:not(.browser-default),
+input[type=number]:not(.browser-default){
 	padding-left: 5px;
 	border: 1px solid #ababab;
 	border-radius: 5px;
@@ -14,28 +18,40 @@ html{
 .material-icons{
 	padding-left: 5px;
 }
-.btn{
+.btn {
 	background-color: #2c9cdb;
-	border-radius: 5px;
+	border-radius: 5px !important;
+	margin-bottom: 15px;
 }
-.row{
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.row {
 	margin-bottom: 0;
 }
-.row .col{
+.row .col {
 	padding: 0px;
 }
 .cent{
-	vertical-align: middle;
+	display: contents;
+	overflow: hidden;  
 }
 .container1{
-	vertical-align: middle;
 	display: flex;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 5px;
+	padding:10px 10px;
+	margin: 10px 0;
 	/* background-color: #FFCC76; */
-	-webkit-box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
-	-moz-box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
-	box-shadow: 1px 4px 15px -4px rgba(0,0,0,0.41);
+	-webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.24);
+	-moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.24);
+	box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.24);
 }
 .checked-task{
  vertical-align: middle;
@@ -86,4 +102,35 @@ html{
 	background-color: white;
 	border: 0;
 	padding: 0;
+	color: #EB5757;
+}
+.curp-matricula{
+	display: flex;
+}
+.curp .matricula{
+	width: 50%;
+}
+.only-blue{
+	color: #2c9cdb;
+}
+.modal-button{
+	font-size: 12px;
+}
+.alumno-nombre, .alumno-matricula, .alumno-curp{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.asignatura-nombre, .asignatura-creditos{
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+.asignatura-delete, .alumno-delete{
+	display: flex;
+	align-items: center;
+}
+.paragraph-display-data{
+	margin:0;
+	vertical-align: middle;
 }

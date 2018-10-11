@@ -1,10 +1,11 @@
+<h4>Todos</h4>
 <div class="row">
 	<form {{action 'addTask' taskInput on='submit'}}>
 		<div class="input-field col s10">
 			{{input type="text" value=taskInput class="task-input" placeHolder='Add a task'}}
 		</div>
 		<div class="input-field col s2">
-			<a class="waves-effect waves-light btn" {{action 'addTask' taskInput on='click'}} >Add todo</a>
+			<a class="waves-effect waves-light btn {{if taskInput '' 'disabled'}}" {{action 'addTask' taskInput on='click'}} >Add todo</a>
 		</div>
 	</form>
 </div>
@@ -13,3 +14,4 @@
 		{{main-container task=task onTaskDelete=(action 'onTaskDelete') onCompletedTask=(action 'onCompletedTask')}}
 	</div>
 {{/each}}
+

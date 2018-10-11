@@ -9,18 +9,16 @@ export default Controller.extend({
 		created: Date(),
 		completed: Date()
 	}, {
-		checked: true,
+		checked: false,
 		name: 'Do something 2',
 		created: Date(),
-		completed: 'Just now'
+		completed: ''
 	}],
 	
 	actions: {
 		onTaskDelete(task){
-			let ans = confirm("Are you sure?");
-			if (ans){
+			if (confirm("Are you sure?")){
 				let tasks = this.get('tasks');
-				//this.set('task.checked', !check);
 				tasks.removeObject(task);
 			}
 		},

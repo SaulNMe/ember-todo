@@ -1,12 +1,12 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-	onTaskDelete(task){
+	onSomethingDelete(something){
 		// Override me...
 	},
 	actions:{
-		removeTask(task){
-			this.onTaskDelete(task);
+		removeSomething(something){
+			this.onSomethingDelete(something);
 		}
 	}
 });

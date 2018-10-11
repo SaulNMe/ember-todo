@@ -1,0 +1,21 @@
+<div class="container1">
+	<div class="studen-full-name cent">	
+		<div class="alumno-nombre col s4">
+			{{#link-to 'auth.detail-alumno' alumno.id}}
+				<p class="paragraph-display-data">{{alumno.persona.fullName}}</p>	
+			{{/link-to}}
+		</div>	
+		<div class="alumno-matricula col s2">
+			<p class="paragraph-display-data">{{alumno.matricula}}</p>
+		</div>
+		<div class="alumno-curp col s3">
+			<p class="paragraph-display-data">{{alumno.persona.curp}}</p>
+		</div>
+		<div class="alumno-asignaturas col s3">	
+			<p class="paragraph-display-data">{{alumno.alumnoasignaturas.size}}</p>
+		</div>
+		<div class="alumno-delete col s1">
+			{{delete-something something=alumno onSomethingDelete=onAlumnoDelete}}
+		</div>
+	</div>
+</div>

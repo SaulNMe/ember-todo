@@ -1,0 +1,45 @@
+<h4>Alumnos</h4>
+<div class="modal-container">
+	{{#jquery-wrapper 
+		query='.modal'
+		method='modal'
+		onInsertAlumno= (action 'addAlumno')
+		}}
+
+		<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn modal-trigger right" href="#modal1">Add Student</a>
+
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal">
+		    <div class="modal-content">
+		      	<h5>Crear nuevo alumno</h5>
+		      	<p>Nombre</p>
+		      	<p>{{input type='text' formatarget="Nombre" value=nombre}}</p>
+		      	<p>Apellido Paterno</p>
+		      	<p>{{input type='text' value=apaterno}}</p>
+		      	<p>Apellido Materno</p>
+		      	<p>{{input type='text' value=amaterno}}</p>
+		      	<div class="curp-matricula col s12">
+		      		<div class="curp col s6">
+				      	<p>Curp</p>
+				      	<p>{{input type='text' value=curp}}</p>	      			
+		      		</div>
+		      		<div class="matricula col s6">
+				      	<p>Matricula</p>
+				      	<p>{{input type='text' value=matricula}}</p>	      			
+		      		</div>
+		      	</div>
+		    </div>
+		    <div class="modal-footer">
+		    	<a href="#" class="modal-close waves-effect waver-green btn-flat modal-button"> Cancelar</a>
+		      	<a href="#" class="modal-close waves-effect waves-blue btn-flat only-blue modal-button {{if nombre (if apaterno (if amaterno (if curp (if matricula '' 'disabled') 'disabled') 'disabled') 'disabled') 'disabled'}}" {{action 'addAlumno' model nombre apaterno amaterno curp matricula on='click'}}>Guardar</a>
+		    </div>
+	  	</div>
+	{{/jquery-wrapper}}
+</div>
+
+{{#each model.alumno as |alumno|}}
+	<div class="cent">
+		{{alumnos-container alumno=alumno onAlumnoDelete=(action 'onAlumnoDelete')}}
+	</div>
+{{/each}}

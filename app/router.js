@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('auth',{path: '/'}, function() {
     this.route('todo',{path: '/'});
     this.route('rails-todo');
+    this.route('alumnos');
+    this.route('asignaturas');
+    this.route('detail-alumno',{path: 'alumnos/detalle/:id'});
   });
 });
 

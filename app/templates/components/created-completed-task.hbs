@@ -1,5 +1,12 @@
 <div class="container">
-	<p>{{task.created}}</p>
-	<p>{{task.completed}}</p>
+	<p class="text-right">Created at: {{moment-format task.created 'MMMM Do YYYY - HH:MMa'}}</p>
+	<p class="text-right">	
+		{{#if task.completed}}
+			Completed at: {{moment-format task.completed 'MMMM Do YYYY - HH:MMa'}}
+		{{else}}
+			Task not completed yet!
+		{{/if}}
+		
+	</p>
 </div>
 

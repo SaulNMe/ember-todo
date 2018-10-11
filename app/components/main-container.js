@@ -4,7 +4,7 @@ export default Component.extend({
 	onCompletedTask(task){
 		//override me...
 	},
-	onTaskDelete(task){
+	onSomethingDelete(task){
 		//override me...
 	}
 });
