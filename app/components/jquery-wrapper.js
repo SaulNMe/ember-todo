@@ -20,7 +20,7 @@ export default Component.extend({
 	},
 	actions:{
 		addAlumno(model, nombre, apaterno, amaterno, curp, matricula){
-			this.onInsertAlumno(model, nombre, apaterno, amaterno, curp, matricula);
+			this.onInsertAlumno(model, nombre, apaterno, amaterno, curp, matricula);	
 		},
 		addAsignatura(nombre, creditos){
 			this.onInsertAsignatura(nombre, creditos);

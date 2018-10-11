@@ -34,6 +34,7 @@
 		    	<a href="#" class="modal-close waves-effect waver-green btn-flat modal-button"> Cancelar</a>
 		      	<a href="#" class="modal-close waves-effect waves-blue btn-flat only-blue modal-button {{if nombre (if apaterno (if amaterno (if curp (if matricula '' 'disabled') 'disabled') 'disabled') 'disabled') 'disabled'}}" {{action 'addAlumno' model nombre apaterno amaterno curp matricula on='click'}}>Guardar</a>
 		    </div>
+		    
 	  	</div>
 	{{/jquery-wrapper}}
 </div>

@@ -12,6 +12,8 @@ export default Controller.extend({
 				nombre: nombre,
 				creditos: creditos
 			}).save();
+			this.set('nombre', '');
+			this.set('creditos', '');
 		}
 	}
 });

@@ -1,56 +1,61 @@
 <div class="container">
-	<h1>{{model.alumno.persona.nombre}}</h1>
-  <div class="alumno-data-container">
-    <!-- LEFT CONTAINER -->
-  	<div class="header-alumno">
-      	<h5>Datos personales</h5>	
-        {{#jquery-wrapper 
-        query='.modal'
-        method='modal'
-        onSaveAlumno= (action 'saveAlumno' 
-        alumno=model.alumno)
-        }}
-          <!-- Modal Trigger -->
-          <a class="waves-effect waves-light btn modal-trigger right" href="#modal1"><i class="material-icons icon-edit">edit</i></a>
-          <!-- Modal Structure -->
-          <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h5>Crear nuevo alumno</h5>
-                <p>Nombre</p>
-                <p>{{input type='text' value=model.alumno.persona.nombre}}</p>
-                <p>Apellido Paterno</p>
-                <p>{{input type='text' value=model.alumno.persona.apellidoPaterno}}</p>
-                <p>Apellido Materno</p>
-                <p>{{input type='text' value=model.alumno.persona.apellidoMaterno}}</p>
-                <div class="curp-matricula col s12">
-                  <div class="curp col s6">
-                    <p>Curp</p>
-                    <p>{{input type='text' value=model.alumno.persona.curp}}</p>             
+  <h1>{{model.alumno.persona.nombre}}</h1>
+  <div class="alumno-data">
+    <div class="alumno-data-container">
+      <!-- LEFT CONTAINER -->
+    	<div class="header-alumno">
+        	<h5>Datos personales</h5>	
+          {{#jquery-wrapper 
+          query='.modal'
+          method='modal'
+          onSaveAlumno= (action 'saveAlumno' 
+          alumno=model.alumno)
+          }}
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger right" href="#modal1"><i class="material-icons icon-edit">edit</i></a>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                  <h5>Crear nuevo alumno</h5>
+                  <p>Nombre</p>
+                  <p>{{input type='text' value=model.alumno.persona.nombre}}</p>
+                  <p>Apellido Paterno</p>
+                  <p>{{input type='text' value=model.alumno.persona.apellidoPaterno}}</p>
+                  <p>Apellido Materno</p>
+                  <p>{{input type='text' value=model.alumno.persona.apellidoMaterno}}</p>
+                  <div class="curp-matricula col s12">
+                    <div class="curp col s6">
+                      <p>Curp</p>
+                      <p>{{input type='text' value=model.alumno.persona.curp}}</p>             
+                    </div>
+                    <div class="matricula col s6">
+                      <p>Matricula</p>
+                      <p>{{input type='text' value=model.alumno.matricula}}</p>              
+                    </div>
                   </div>
-                  <div class="matricula col s6">
-                    <p>Matricula</p>
-                    <p>{{input type='text' value=model.alumno.matricula}}</p>              
-                  </div>
-                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="modal-close waves-effect waver-green btn-flat modal-button"> Cancelar</a>
+                  <a href="#" class="modal-close waves-effect waves-blue btn-flat only-blue modal-button {{if model.alumno.persona.nombre (if model.alumno.persona.apellidoPaterno (if model.alumno.persona.apellidoMaterno (if model.alumno.persona.curp (if model.alumno.matricula '' 'disabled') 'disabled') 'disabled') 'disabled') 'disabled'}}" {{action 'saveAlumno' model.alumno on='click'}}>Guardar</a>
+              </div>
             </div>
-            <div class="modal-footer">
-              <a href="#" class="modal-close waves-effect waver-green btn-flat modal-button"> Cancelar</a>
-                <a href="#" class="modal-close waves-effect waves-blue btn-flat only-blue modal-button {{if model.alumno.persona.nombre (if model.alumno.persona.apellidoPaterno (if model.alumno.persona.apellidoMaterno (if model.alumno.persona.curp (if model.alumno.matricula '' 'disabled') 'disabled') 'disabled') 'disabled') 'disabled'}}" {{action 'saveAlumno' model.alumno on='click'}}>Guardar</a>
-            </div>
-          </div>
-        {{/jquery-wrapper}}
-  	</div>
-    	<p>Nombre</p>
-    	<p class="created-task">{{model.alumno.persona.nombre}}</p>
-    	<p>Apellido Paterno</p>
-    	<p class="created-task">{{model.alumno.persona.apellidoPaterno}}</p>
-    	<p>Apellido Materno</p>
-    	<p class="created-task">{{model.alumno.persona.apellidoPaterno}}</p>
-    	<p>Curp</p>
-    	<p class="created-task">{{model.alumno.persona.curp}}</p>	  
-    	<p>Matricula</p>
-    	<p class="created-task">{{model.alumno.matricula}}</p>	
-  </div>
-  <div class="alumno-asignaturas">
+          {{/jquery-wrapper}}
+    	</div>
+      	<p>Nombre</p>
+      	<p class="created-task">{{model.alumno.persona.nombre}}</p>
+      	<p>Apellido Paterno</p>
+      	<p class="created-task">{{model.alumno.persona.apellidoPaterno}}</p>
+      	<p>Apellido Materno</p>
+      	<p class="created-task">{{model.alumno.persona.apellidoPaterno}}</p>
+      	<p>Curp</p>
+      	<p class="created-task">{{model.alumno.persona.curp}}</p>	  
+      	<p>Matricula</p>
+      	<p class="created-task">{{model.alumno.matricula}}</p>	
+    </div>
+    <div class="alumno-asignaturas">
+      {{#each model.asignaturas as |asignatura|}}
+        <p>{{asignatura.persona.nombre}} </p>
+      {{/each}}
+    </div>
   </div>
 </div>

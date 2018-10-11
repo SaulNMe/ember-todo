@@ -39,6 +39,7 @@
     "ember-material-icons": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.8.0",
+    "ember-power-select": "^2.0.9",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.3.0",
     "eslint-plugin-ember": "^5.0.0",
@@ -49,6 +50,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+    "npm": "^6.4.1"
   }
 }

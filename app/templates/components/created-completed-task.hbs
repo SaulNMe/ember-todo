@@ -1,8 +1,8 @@
 <div class="container">
-	<p class="text-right">Created at: {{moment-format task.created 'MMMM Do YYYY - HH:MMa'}}</p>
+	<p class="text-right">Created at: {{moment-format task.created 'MMMM Do YYYY - HH:MM a'}}</p>
 	<p class="text-right">	
 		{{#if task.completed}}
-			Completed at: {{moment-format task.completed 'MMMM Do YYYY - HH:MMa'}}
+			Completed at: {{moment-format task.completed 'MMMM Do YYYY - HH:MM a'}}
 		{{else}}
 			Task not completed yet!
 		{{/if}}
