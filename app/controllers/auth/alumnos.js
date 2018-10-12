@@ -4,7 +4,7 @@ export default Controller.extend({
 		onAlumnoDelete(alumno){
 			if(confirm("Are you sure")) alumno.destroyRecord();
 		},
-		addAlumno(model){
+		addAlumno(){
 			let nombre = this.get('nombre');	
 			let apaterno = this.get('apaterno');	
 			let amaterno = this.get('amaterno');	

@@ -52,10 +52,31 @@
       	<p>Matricula</p>
       	<p class="created-task">{{model.alumno.matricula}}</p>	
     </div>
+    
     <div class="alumno-asignaturas">
-      {{#each model.alum_asi as |asignatura|}}
-        <p>{{asignatura.asignatura.nombre}} </p>
+      
+      {{#each model.alumnoAsignaturas as |alumnoAsignatura|}}
+        {{#if (eq alumnoAsignatura.alumno.id model.alumno.id)}}
+          {{alumnoAsignatura.alumno.id}}
+          {{alumnoAsignatura.asignatura.nombre}}
+        {{/if}}
       {{/each}}
+
+      {{#jquery-wrapper
+        query='.dropdown-trigger'
+        method='dropdown'
+      }}
+          <!-- Dropdown Trigger -->
+  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Add asignatura</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    {{#each model.asignaturas as |asignatura|}}
+      <li><a {{action 'addAsignatura' model asignatura on='click'}}>{{asignatura.nombre}}</a></li>
+      <li class="divider" tabindex="-1"></li>
+    {{/each}}
+  </ul>
+      {{/jquery-wrapper}}
     </div>
   </div>
 </div>

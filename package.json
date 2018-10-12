@@ -42,6 +42,7 @@
     "ember-power-select": "^2.0.9",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.3.0",
+    "ember-truth-helpers": "^2.1.0",
     "eslint-plugin-ember": "^5.0.0",
     "loader.js": "^4.2.3",
     "qunit-dom": "^0.6.2"
@@ -50,6 +51,7 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
+    "ember-select": "^0.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "npm": "^6.4.1"
   }
